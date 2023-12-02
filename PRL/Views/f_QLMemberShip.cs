@@ -32,22 +32,27 @@ namespace PRL.Views
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            var obj = new MemBerShip();
-            obj.NgayGiaNhap = dateGiaNhap.Value;
-            obj.NgayHetHan = dateHan.Value;
-            obj.PhanTramGiam = Convert.ToDouble(txtPhanTramGiam.Text);
-            obj.LoaiTheThanhVien = txtTenMember.Text;
+            var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn thêm MemBerShip không?", "Xác nhận thêm", MessageBoxButtons.YesNo);
 
-            bool themObj = _services.Create(obj);
-            if (themObj)
+            if (confirmResult == DialogResult.Yes)
             {
-                MessageBox.Show("Thêm thành công");
-                LoadData(_services.GetAll());
+                var obj = new MemBerShip();
+                obj.NgayGiaNhap = dateGiaNhap.Value;
+                obj.NgayHetHan = dateHan.Value;
+                obj.PhanTramGiam = Convert.ToDouble(txtPhanTramGiam.Text);
+                obj.LoaiTheThanhVien = txtTenMember.Text;
 
-            }
-            else
-            {
-                MessageBox.Show("Thêm thất bại");
+                bool themObj = _services.Create(obj);
+                if (themObj)
+                {
+                    MessageBox.Show("Thêm thành công");
+                    LoadData(_services.GetAll());
+
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại");
+                }
             }
         }
 
@@ -73,12 +78,15 @@ namespace PRL.Views
         }
         private void dgrMember_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            var selectMember = dgrMember.Rows[index];
-            txtTenMember.Text = selectMember.Cells[3].Value.ToString();
-            txtPhanTramGiam.Text = selectMember.Cells[4].Value.ToString();
-            dateGiaNhap.Value = (DateTime)selectMember.Cells[1].Value;
-            dateHan.Value = (DateTime)selectMember.Cells[2].Value;
+            if (e.RowIndex >= 0 && e.RowIndex < dgrMember.Rows.Count)
+            {
+                int index = e.RowIndex;
+                var selectMember = dgrMember.Rows[index];
+                txtTenMember.Text = selectMember.Cells[3].Value.ToString();
+                txtPhanTramGiam.Text = selectMember.Cells[4].Value.ToString();
+                dateGiaNhap.Value = (DateTime)selectMember.Cells[1].Value;
+                dateHan.Value = (DateTime)selectMember.Cells[2].Value;
+            }
         }
 
         private void btnLoadData_Click(object sender, EventArgs e)
@@ -88,22 +96,27 @@ namespace PRL.Views
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            var obj = new MemBerShip();
-            obj.NgayGiaNhap = dateGiaNhap.Value;
-            obj.NgayHetHan = dateHan.Value;
-            obj.PhanTramGiam = Convert.ToDouble(txtPhanTramGiam.Text);
-            obj.LoaiTheThanhVien = txtTenMember.Text;
+            var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn sửa MemBerShip không?", "Xác nhận sửa", MessageBoxButtons.YesNo);
 
-            bool themObj = _services.Update(selectedID, obj);
-            if (themObj)
+            if (confirmResult == DialogResult.Yes)
             {
-                MessageBox.Show("Sửa thành công");
-                LoadData(_services.GetAll());
+                var obj = new MemBerShip();
+                obj.NgayGiaNhap = dateGiaNhap.Value;
+                obj.NgayHetHan = dateHan.Value;
+                obj.PhanTramGiam = Convert.ToDouble(txtPhanTramGiam.Text);
+                obj.LoaiTheThanhVien = txtTenMember.Text;
 
-            }
-            else
-            {
-                MessageBox.Show("Sửa thất bại");
+                bool themObj = _services.Update(selectedID, obj);
+                if (themObj)
+                {
+                    MessageBox.Show("Sửa thành công");
+                    LoadData(_services.GetAll());
+
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thất bại");
+                }
             }
         }
 
@@ -120,21 +133,25 @@ namespace PRL.Views
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            bool Obj = _services.Delete(selectedID);
-            if (Obj)
-            {
-                MessageBox.Show("Xóa thành công");
-                LoadData(_services.GetAll());
+            var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa MemBerShip không?", "Xác nhận xóa", MessageBoxButtons.YesNo);
 
-            }
-            else
+            if (confirmResult == DialogResult.Yes)
             {
-                MessageBox.Show("Xóa thất bại");
-            }
+                bool Obj = _services.Delete(selectedID);
+                if (Obj)
+                {
+                    MessageBox.Show("Xóa thành công");
+                    LoadData(_services.GetAll());
 
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại");
+                }
+            }
         }
 
-      
+
     }
 }
 

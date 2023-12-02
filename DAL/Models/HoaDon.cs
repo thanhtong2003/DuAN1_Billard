@@ -14,7 +14,7 @@ namespace DAL.Models
         public int? IdkhuyenMai { get; set; }
         public int IdkhachHang { get; set; }
         public DateTime NgayTao { get; set; }
-        public bool TrangThai { get; set; }
+        public string TrangThai { get; set; } = null!;
         public decimal TongTien { get; set; }
 
         public virtual KhachHang IdkhachHangNavigation { get; set; } = null!;

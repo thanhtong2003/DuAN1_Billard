@@ -44,7 +44,7 @@ namespace DAL.Models
             modelBuilder.Entity<BanBium>(entity =>
             {
                 entity.HasKey(e => e.IdbanBiA)
-                    .HasName("PK__BanBiA__B5388939759FFAA1");
+                    .HasName("PK__BanBiA__B5388939C7633BA8");
 
                 entity.ToTable("BanBiA");
 
@@ -52,21 +52,23 @@ namespace DAL.Models
 
                 entity.Property(e => e.CapBanBiA).HasMaxLength(50);
 
-                entity.Property(e => e.DonGia).HasColumnType("decimal(18, 0)");
+                entity.Property(e => e.DonGia).HasColumnType("money");
 
                 entity.Property(e => e.LoaiBanBiA).HasMaxLength(50);
 
                 entity.Property(e => e.TenBanBiA).HasMaxLength(100);
+
+                entity.Property(e => e.TrangThai).HasMaxLength(50);
             });
 
             modelBuilder.Entity<ChucVu>(entity =>
             {
                 entity.HasKey(e => e.IdchucVu)
-                    .HasName("PK__ChucVu__70FCCF652F8948F4");
+                    .HasName("PK__ChucVu__70FCCF65B0720B0B");
 
                 entity.ToTable("ChucVu");
 
-                entity.HasIndex(e => e.TenChucVu, "UQ__ChucVu__A7E2123E93F52493")
+                entity.HasIndex(e => e.TenChucVu, "UQ__ChucVu__A7E2123ED39F4EA9")
                     .IsUnique();
 
                 entity.Property(e => e.IdchucVu).HasColumnName("IDChucVu");
@@ -77,7 +79,7 @@ namespace DAL.Models
             modelBuilder.Entity<DichVu>(entity =>
             {
                 entity.HasKey(e => e.IddichVu)
-                    .HasName("PK__DichVu__C0C95928853B4303");
+                    .HasName("PK__DichVu__C0C9592821598D8A");
 
                 entity.ToTable("DichVu");
 
@@ -110,7 +112,7 @@ namespace DAL.Models
             modelBuilder.Entity<DichVuDb>(entity =>
             {
                 entity.HasKey(e => e.IddichVuDb)
-                    .HasName("PK__DichVuDB__64ECF545101EA04B");
+                    .HasName("PK__DichVuDB__64ECF5450CC7F987");
 
                 entity.ToTable("DichVuDB");
 
@@ -136,23 +138,25 @@ namespace DAL.Models
             modelBuilder.Entity<GayBium>(entity =>
             {
                 entity.HasKey(e => e.IdgayBiA)
-                    .HasName("PK__GayBiA__06BA0D8BABA9E163");
+                    .HasName("PK__GayBiA__06BA0D8B5B38D063");
 
                 entity.ToTable("GayBiA");
 
                 entity.Property(e => e.IdgayBiA).HasColumnName("IDGayBiA");
 
-                entity.Property(e => e.DonGia).HasColumnType("decimal(18, 0)");
+                entity.Property(e => e.DonGia).HasColumnType("money");
 
                 entity.Property(e => e.LoaiGayBiA).HasMaxLength(50);
 
                 entity.Property(e => e.TenGayBiA).HasMaxLength(100);
+
+                entity.Property(e => e.TrangThai).HasMaxLength(50);
             });
 
             modelBuilder.Entity<HoaDon>(entity =>
             {
                 entity.HasKey(e => e.IdhoaDon)
-                    .HasName("PK__HoaDon__5B896F49D4C4FF3F");
+                    .HasName("PK__HoaDon__5B896F4927FEFEF4");
 
                 entity.ToTable("HoaDon");
 
@@ -165,6 +169,8 @@ namespace DAL.Models
                 entity.Property(e => e.NgayTao).HasColumnType("date");
 
                 entity.Property(e => e.TongTien).HasColumnType("money");
+
+                entity.Property(e => e.TrangThai).HasMaxLength(50);
 
                 entity.HasOne(d => d.IdkhachHangNavigation)
                     .WithMany(p => p.HoaDons)
@@ -181,7 +187,7 @@ namespace DAL.Models
             modelBuilder.Entity<HoaDonCt>(entity =>
             {
                 entity.HasKey(e => e.IdhoaDonCt)
-                    .HasName("PK__HoaDonCT__C9D2C4D7C51F2E87");
+                    .HasName("PK__HoaDonCT__C9D2C4D71EEB9327");
 
                 entity.ToTable("HoaDonCT");
 
@@ -200,6 +206,8 @@ namespace DAL.Models
                 entity.Property(e => e.ThoiGianKetThuc).HasColumnType("datetime");
 
                 entity.Property(e => e.TongTien).HasColumnType("money");
+
+                entity.Property(e => e.TrangThai).HasMaxLength(50);
 
                 entity.HasOne(d => d.IddichVuNavigation)
                     .WithMany(p => p.HoaDonCts)
@@ -223,7 +231,7 @@ namespace DAL.Models
             modelBuilder.Entity<KhachHang>(entity =>
             {
                 entity.HasKey(e => e.IdkhachHang)
-                    .HasName("PK__KhachHan__5A7167B5E32F2449");
+                    .HasName("PK__KhachHan__5A7167B5AC979B0C");
 
                 entity.ToTable("KhachHang");
 
@@ -254,16 +262,16 @@ namespace DAL.Models
             modelBuilder.Entity<KhuyenMai>(entity =>
             {
                 entity.HasKey(e => e.IdkhuyenMai)
-                    .HasName("PK__KhuyenMa__FFAC1400C54CA068");
+                    .HasName("PK__KhuyenMa__FFAC1400F2C1DA69");
 
                 entity.ToTable("KhuyenMai");
 
-                entity.HasIndex(e => e.TenKhuyenMai, "UQ__KhuyenMa__A956B87CB8D45DC6")
+                entity.HasIndex(e => e.TenKhuyenMai, "UQ__KhuyenMa__A956B87C019E8BF9")
                     .IsUnique();
 
                 entity.Property(e => e.IdkhuyenMai).HasColumnName("IDKhuyenMai");
 
-                entity.Property(e => e.GhiChu).HasMaxLength(100);
+                entity.Property(e => e.GhiChu).HasColumnType("text");
 
                 entity.Property(e => e.NgayHetHan).HasColumnType("date");
 
@@ -277,7 +285,7 @@ namespace DAL.Models
             modelBuilder.Entity<LoaiDichVuDb>(entity =>
             {
                 entity.HasKey(e => e.IdloaiDichVuDb)
-                    .HasName("PK__LoaiDich__3E0AA889690CAE7C");
+                    .HasName("PK__LoaiDich__3E0AA889982BF4B9");
 
                 entity.ToTable("LoaiDichVuDB");
 
@@ -293,7 +301,7 @@ namespace DAL.Models
             modelBuilder.Entity<MemBerShip>(entity =>
             {
                 entity.HasKey(e => e.IdmemBerShip)
-                    .HasName("PK__MemBerSh__9A18A2434738875C");
+                    .HasName("PK__MemBerSh__9A18A2434ADBAE97");
 
                 entity.ToTable("MemBerShip");
 
@@ -309,7 +317,7 @@ namespace DAL.Models
             modelBuilder.Entity<NhanVien>(entity =>
             {
                 entity.HasKey(e => e.IdnhanVien)
-                    .HasName("PK__NhanVien__7AC2D9F7F4B9FF3A");
+                    .HasName("PK__NhanVien__7AC2D9F7EE3F17E4");
 
                 entity.ToTable("NhanVien");
 
@@ -337,6 +345,8 @@ namespace DAL.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
+                entity.Property(e => e.TenNhanVien).HasMaxLength(50);
+
                 entity.Property(e => e.TrangThai).HasMaxLength(50);
 
                 entity.HasOne(d => d.IdchucVuNavigation)
@@ -349,13 +359,13 @@ namespace DAL.Models
             modelBuilder.Entity<Partner>(entity =>
             {
                 entity.HasKey(e => e.Idpartner)
-                    .HasName("PK__Partner__C86253DCE66B281E");
+                    .HasName("PK__Partner__C86253DCD8A6FCFB");
 
                 entity.ToTable("Partner");
 
                 entity.Property(e => e.Idpartner).HasColumnName("IDPartner");
 
-                entity.Property(e => e.DonGia).HasColumnType("decimal(18, 0)");
+                entity.Property(e => e.DonGia).HasColumnType("money");
 
                 entity.Property(e => e.LoaiPartner).HasMaxLength(50);
 

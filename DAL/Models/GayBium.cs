@@ -14,6 +14,7 @@ namespace DAL.Models
         public string TenGayBiA { get; set; } = null!;
         public string LoaiGayBiA { get; set; } = null!;
         public decimal DonGia { get; set; }
+        public string TrangThai { get; set; } = null!;
         public int SoLuong { get; set; }
 
         public virtual ICollection<DichVu> DichVus { get; set; }

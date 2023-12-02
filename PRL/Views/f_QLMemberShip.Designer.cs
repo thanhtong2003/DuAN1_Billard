@@ -55,26 +55,26 @@
             groupBox3.Controls.Add(btnSua);
             groupBox3.Controls.Add(btnXoa);
             groupBox3.Controls.Add(btnThem);
-            groupBox3.Location = new Point(977, 72);
+            groupBox3.Location = new Point(1013, 133);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(251, 218);
+            groupBox3.Size = new Size(251, 258);
             groupBox3.TabIndex = 12;
             groupBox3.TabStop = false;
             groupBox3.Text = "Công cụ";
             // 
             // btnLoadData
             // 
-            btnLoadData.Location = new Point(80, 151);
+            btnLoadData.Location = new Point(80, 191);
             btnLoadData.Name = "btnLoadData";
             btnLoadData.Size = new Size(94, 29);
             btnLoadData.TabIndex = 4;
-            btnLoadData.Text = "Load Data";
+            btnLoadData.Text = "Danh sách";
             btnLoadData.UseVisualStyleBackColor = true;
             btnLoadData.Click += btnLoadData_Click;
             // 
             // btnSua
             // 
-            btnSua.Location = new Point(80, 68);
+            btnSua.Location = new Point(80, 96);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(94, 29);
             btnSua.TabIndex = 2;
@@ -84,7 +84,7 @@
             // 
             // btnXoa
             // 
-            btnXoa.Location = new Point(80, 103);
+            btnXoa.Location = new Point(80, 146);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(94, 29);
             btnXoa.TabIndex = 1;
@@ -94,7 +94,7 @@
             // 
             // btnThem
             // 
-            btnThem.Location = new Point(80, 33);
+            btnThem.Location = new Point(80, 48);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(94, 29);
             btnThem.TabIndex = 0;
@@ -195,7 +195,7 @@
             // dgrMember
             // 
             dgrMember.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgrMember.Location = new Point(196, 331);
+            dgrMember.Location = new Point(27, 324);
             dgrMember.Name = "dgrMember";
             dgrMember.RowHeadersWidth = 51;
             dgrMember.RowTemplate.Height = 29;

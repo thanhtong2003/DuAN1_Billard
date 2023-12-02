@@ -9,37 +9,38 @@ using System.Threading.Tasks;
 
 namespace BUS.Services
 {
-    public class MemberServices : IMemberServices
+    public class ParterServices : IParterServices
     {
-        MemberRepos _repos = new MemberRepos();
+        PartnerRepos _repos = new PartnerRepos();
 
-        public MemberServices()
+
+        public ParterServices()
         {
         }
 
-        public MemberServices(MemberRepos repos)
+        public ParterServices(PartnerRepos repos)
         {
             _repos = repos;
         }
 
-        public bool Create(MemBerShip obj)
+        public bool Create(Partner obj)
         {
             return _repos.Create(obj);
         }
 
-        public bool Delete(int id)
+        public bool Delete(int Id)
         {
-            return _repos.Delete(id);
+            return (_repos.Delete(Id));
         }
 
-        public List<MemBerShip> GetAll()
+        public List<Partner> GetAll()
         {
             return _repos.GetAll();
         }
 
-        public bool Update(int id, MemBerShip obj)
+        public bool Update(int Id, Partner obj)
         {
-            return _repos.Update(id, obj);
+            return _repos.Update(Id, obj);
         }
     }
 }

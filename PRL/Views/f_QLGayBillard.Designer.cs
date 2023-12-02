@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            txtSoLuong = new TextBox();
             label7 = new Label();
-            txtEmail = new TextBox();
+            txtDonGia = new TextBox();
             label = new Label();
-            txtSDT = new TextBox();
+            txtLoaiGay = new TextBox();
             label3 = new Label();
-            txtDiaChi = new TextBox();
+            txtTenGay = new TextBox();
             label1 = new Label();
             groupBox1 = new GroupBox();
+            checkHetGay = new CheckBox();
+            label4 = new Label();
             label2 = new Label();
             groupBox3 = new GroupBox();
             btnXoaForm = new Button();
@@ -44,39 +46,39 @@
             btnXoa = new Button();
             btnThem = new Button();
             groupBox4 = new GroupBox();
-            dataGridView1 = new DataGridView();
+            dgrGayBi_a = new DataGridView();
             groupBox2 = new GroupBox();
             btnTimKiem = new Button();
             textBox4 = new TextBox();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgrGayBi_a).BeginInit();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox1
+            // txtSoLuong
             // 
-            textBox1.Location = new Point(108, 171);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(369, 27);
-            textBox1.TabIndex = 49;
+            txtSoLuong.Location = new Point(483, 30);
+            txtSoLuong.Name = "txtSoLuong";
+            txtSoLuong.Size = new Size(208, 27);
+            txtSoLuong.TabIndex = 49;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(14, 174);
+            label7.Location = new Point(389, 33);
             label7.Name = "label7";
             label7.Size = new Size(69, 20);
             label7.TabIndex = 48;
             label7.Text = "Số lượng";
             // 
-            // txtEmail
+            // txtDonGia
             // 
-            txtEmail.Location = new Point(108, 124);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(369, 27);
-            txtEmail.TabIndex = 47;
+            txtDonGia.Location = new Point(108, 124);
+            txtDonGia.Name = "txtDonGia";
+            txtDonGia.Size = new Size(257, 27);
+            txtDonGia.TabIndex = 47;
             // 
             // label
             // 
@@ -87,12 +89,12 @@
             label.TabIndex = 46;
             label.Text = "Đơn giá";
             // 
-            // txtSDT
+            // txtLoaiGay
             // 
-            txtSDT.Location = new Point(108, 77);
-            txtSDT.Name = "txtSDT";
-            txtSDT.Size = new Size(369, 27);
-            txtSDT.TabIndex = 45;
+            txtLoaiGay.Location = new Point(108, 77);
+            txtLoaiGay.Name = "txtLoaiGay";
+            txtLoaiGay.Size = new Size(257, 27);
+            txtLoaiGay.TabIndex = 45;
             // 
             // label3
             // 
@@ -103,12 +105,12 @@
             label3.TabIndex = 44;
             label3.Text = "Loại gậy";
             // 
-            // txtDiaChi
+            // txtTenGay
             // 
-            txtDiaChi.Location = new Point(108, 30);
-            txtDiaChi.Name = "txtDiaChi";
-            txtDiaChi.Size = new Size(369, 27);
-            txtDiaChi.TabIndex = 43;
+            txtTenGay.Location = new Point(108, 30);
+            txtTenGay.Name = "txtTenGay";
+            txtTenGay.Size = new Size(257, 27);
+            txtTenGay.TabIndex = 43;
             // 
             // label1
             // 
@@ -121,20 +123,41 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(txtDiaChi);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(checkHetGay);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(txtTenGay);
+            groupBox1.Controls.Add(txtSoLuong);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(txtEmail);
+            groupBox1.Controls.Add(txtDonGia);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label);
-            groupBox1.Controls.Add(txtSDT);
+            groupBox1.Controls.Add(txtLoaiGay);
             groupBox1.Location = new Point(12, 73);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(490, 213);
+            groupBox1.Size = new Size(710, 213);
             groupBox1.TabIndex = 50;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin gậy";
+            // 
+            // checkHetGay
+            // 
+            checkHetGay.AutoSize = true;
+            checkHetGay.Location = new Point(488, 81);
+            checkHetGay.Name = "checkHetGay";
+            checkHetGay.Size = new Size(83, 24);
+            checkHetGay.TabIndex = 51;
+            checkHetGay.Text = "Hết gậy";
+            checkHetGay.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(389, 84);
+            label4.Name = "label4";
+            label4.Size = new Size(75, 20);
+            label4.TabIndex = 50;
+            label4.Text = "Trạng thái";
             // 
             // label2
             // 
@@ -151,7 +174,7 @@
             groupBox3.Controls.Add(btnSua);
             groupBox3.Controls.Add(btnXoa);
             groupBox3.Controls.Add(btnThem);
-            groupBox3.Location = new Point(508, 73);
+            groupBox3.Location = new Point(751, 73);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(330, 120);
             groupBox3.TabIndex = 53;
@@ -175,6 +198,7 @@
             btnSua.TabIndex = 2;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
             // 
             // btnXoa
             // 
@@ -184,6 +208,7 @@
             btnXoa.TabIndex = 1;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
             // 
             // btnThem
             // 
@@ -193,32 +218,34 @@
             btnThem.TabIndex = 0;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(dataGridView1);
+            groupBox4.Controls.Add(dgrGayBi_a);
             groupBox4.Location = new Point(12, 292);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(826, 347);
+            groupBox4.Size = new Size(1069, 347);
             groupBox4.TabIndex = 54;
             groupBox4.TabStop = false;
             groupBox4.Text = "Danh sách gậy";
             // 
-            // dataGridView1
+            // dgrGayBi_a
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 26);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(811, 321);
-            dataGridView1.TabIndex = 0;
+            dgrGayBi_a.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgrGayBi_a.Location = new Point(6, 26);
+            dgrGayBi_a.Name = "dgrGayBi_a";
+            dgrGayBi_a.RowHeadersWidth = 51;
+            dgrGayBi_a.RowTemplate.Height = 29;
+            dgrGayBi_a.Size = new Size(1045, 321);
+            dgrGayBi_a.TabIndex = 0;
+            dgrGayBi_a.CellClick += dgrGayBi_a_CellClick;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(btnTimKiem);
             groupBox2.Controls.Add(textBox4);
-            groupBox2.Location = new Point(508, 199);
+            groupBox2.Location = new Point(751, 199);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(330, 87);
             groupBox2.TabIndex = 52;
@@ -245,7 +272,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(885, 660);
+            ClientSize = new Size(1133, 660);
             Controls.Add(groupBox3);
             Controls.Add(groupBox4);
             Controls.Add(groupBox2);
@@ -258,7 +285,7 @@
             groupBox1.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgrGayBi_a).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);
@@ -267,13 +294,13 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox txtSoLuong;
         private Label label7;
-        private TextBox txtEmail;
+        private TextBox txtDonGia;
         private Label label;
-        private TextBox txtSDT;
+        private TextBox txtLoaiGay;
         private Label label3;
-        private TextBox txtDiaChi;
+        private TextBox txtTenGay;
         private Label label1;
         private GroupBox groupBox1;
         private Label label2;
@@ -283,9 +310,11 @@
         private Button btnXoa;
         private Button btnThem;
         private GroupBox groupBox4;
-        private DataGridView dataGridView1;
+        private DataGridView dgrGayBi_a;
         private GroupBox groupBox2;
         private Button btnTimKiem;
         private TextBox textBox4;
+        private CheckBox checkHetGay;
+        private Label label4;
     }
 }

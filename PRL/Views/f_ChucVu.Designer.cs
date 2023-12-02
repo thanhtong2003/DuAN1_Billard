@@ -29,81 +29,92 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            txtTenChucVu = new TextBox();
+            dgrChucVu = new DataGridView();
+            btnThem = new Button();
+            btnSua = new Button();
+            btnXoa = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgrChucVu).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(24, 31);
+            label1.Location = new Point(21, 23);
             label1.Name = "label1";
-            label1.Size = new Size(86, 20);
+            label1.Size = new Size(70, 15);
             label1.TabIndex = 0;
             label1.Text = "Tên chức vụ";
             // 
-            // textBox1
+            // txtTenChucVu
             // 
-            textBox1.Location = new Point(133, 31);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(376, 27);
-            textBox1.TabIndex = 1;
+            txtTenChucVu.Location = new Point(116, 23);
+            txtTenChucVu.Margin = new Padding(3, 2, 3, 2);
+            txtTenChucVu.Name = "txtTenChucVu";
+            txtTenChucVu.Size = new Size(330, 23);
+            txtTenChucVu.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgrChucVu
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(24, 82);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(485, 188);
-            dataGridView1.TabIndex = 2;
+            dgrChucVu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgrChucVu.Location = new Point(21, 62);
+            dgrChucVu.Margin = new Padding(3, 2, 3, 2);
+            dgrChucVu.Name = "dgrChucVu";
+            dgrChucVu.RowHeadersWidth = 51;
+            dgrChucVu.RowTemplate.Height = 29;
+            dgrChucVu.Size = new Size(424, 141);
+            dgrChucVu.TabIndex = 2;
+            dgrChucVu.CellClick += dgrChucVu_CellClick;
             // 
-            // button1
+            // btnThem
             // 
-            button1.Location = new Point(65, 297);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 3;
-            button1.Text = "Thêm";
-            button1.UseVisualStyleBackColor = true;
+            btnThem.Location = new Point(57, 223);
+            btnThem.Margin = new Padding(3, 2, 3, 2);
+            btnThem.Name = "btnThem";
+            btnThem.Size = new Size(82, 22);
+            btnThem.TabIndex = 3;
+            btnThem.Text = "Thêm";
+            btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
             // 
-            // button2
+            // btnSua
             // 
-            button2.Location = new Point(193, 297);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 4;
-            button2.Text = "Sửa";
-            button2.UseVisualStyleBackColor = true;
+            btnSua.Location = new Point(169, 223);
+            btnSua.Margin = new Padding(3, 2, 3, 2);
+            btnSua.Name = "btnSua";
+            btnSua.Size = new Size(82, 22);
+            btnSua.TabIndex = 4;
+            btnSua.Text = "Sửa";
+            btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
             // 
-            // button3
+            // btnXoa
             // 
-            button3.Location = new Point(326, 297);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 5;
-            button3.Text = "Xóa";
-            button3.UseVisualStyleBackColor = true;
+            btnXoa.Location = new Point(285, 223);
+            btnXoa.Margin = new Padding(3, 2, 3, 2);
+            btnXoa.Name = "btnXoa";
+            btnXoa.Size = new Size(82, 22);
+            btnXoa.TabIndex = 5;
+            btnXoa.Text = "Xóa";
+            btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
             // 
             // f_ChucVu
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(536, 340);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
-            Controls.Add(textBox1);
+            ClientSize = new Size(469, 255);
+            Controls.Add(btnXoa);
+            Controls.Add(btnSua);
+            Controls.Add(btnThem);
+            Controls.Add(dgrChucVu);
+            Controls.Add(txtTenChucVu);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "f_ChucVu";
             Text = "f_ChucVu";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += f_ChucVu_Load;
+            ((System.ComponentModel.ISupportInitialize)dgrChucVu).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -111,10 +122,10 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private DataGridView dataGridView1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private TextBox txtTenChucVu;
+        private DataGridView dgrChucVu;
+        private Button btnThem;
+        private Button btnSua;
+        private Button btnXoa;
     }
 }

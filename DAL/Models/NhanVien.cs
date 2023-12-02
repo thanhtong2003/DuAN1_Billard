@@ -7,6 +7,7 @@ namespace DAL.Models
     {
         public int IdnhanVien { get; set; }
         public int IdchucVu { get; set; }
+        public string TenNhanVien { get; set; } = null!;
         public string DiaChi { get; set; } = null!;
         public string SoDienThoai { get; set; } = null!;
         public bool GioiTinh { get; set; }

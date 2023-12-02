@@ -15,7 +15,7 @@ namespace DAL.Models
         public int SoLuong { get; set; }
         public string? GhiChu { get; set; }
         public decimal TongTien { get; set; }
-        public bool TrangThai { get; set; }
+        public string TrangThai { get; set; } = null!;
 
         public virtual DichVuDb IddichVuDbNavigation { get; set; } = null!;
         public virtual DichVu IddichVuNavigation { get; set; } = null!;

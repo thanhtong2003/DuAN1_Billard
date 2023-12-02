@@ -28,7 +28,8 @@ namespace DAL.Repositories
                 _dbContext.MemBerShips.Add(obj);
                 _dbContext.SaveChanges();
                 return true;
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return false;
             }
@@ -42,7 +43,8 @@ namespace DAL.Repositories
                 _dbContext.Remove(xoa);
                 _dbContext.SaveChanges();
                 return true;
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return false;
             }
@@ -65,8 +67,9 @@ namespace DAL.Repositories
                 _dbContext.Update(suaObj);
                 _dbContext.SaveChanges();
                 return true;
-                    
-            }catch (Exception ex) { return false; }
+
+            }
+            catch (Exception ex) { return false; }
         }
     }
 }
