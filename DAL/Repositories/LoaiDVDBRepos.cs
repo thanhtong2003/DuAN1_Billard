@@ -68,7 +68,7 @@ namespace DAL.Repositories
 
         public int GetIdByName(string name)
         {
-            Console.WriteLine("Tên loại: " + name);
+            
             var obj = _contex.LoaiDichVuDbs.FirstOrDefault(x => x.TenLoaiDichVuDb == name);
             if (obj != null)
             {

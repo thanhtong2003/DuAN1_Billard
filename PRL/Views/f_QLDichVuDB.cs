@@ -181,19 +181,19 @@ namespace PRL.Views
                 }
             }
         }
-
+        int idLoai;
         private void cmbLoaiDVDB_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbLoaiDVDB.SelectedIndex != -1)
             {
                 string tenLoai = cmbLoaiDVDB.SelectedItem.ToString();
-                int idLoai = _loaiService.GetIdByName(tenLoai);
+                idLoai = _loaiService.GetIdByName(tenLoai);
 
                 Console.WriteLine("ID chức vụ: " + idLoai);
             }
         }
 
-        
+
 
         private void btnThemDVDB_Click(object sender, EventArgs e)
         {
@@ -201,13 +201,13 @@ namespace PRL.Views
 
             if (confirmResult == DialogResult.Yes)
             {
-                string tenLoai = cmbLoaiDVDB.SelectedItem.ToString();
+                
                 var obj = new DichVuDb();
                 obj.TenDichVuDb = txtTenDVDB.Text;
-                obj.IddichVuDb = _loaiService.GetIdByName(tenLoai);
+                obj.IddichVuDb = idLoai;
                 obj.MoTa = txtGhiChu.Text;
                 obj.DonGia = Convert.ToDecimal(txtDonGia.Text);
-                bool resurl = _dichVuService.Create(obj);
+                bool resurl =_dichVuService.Create(obj);
                 if (resurl)
                 {
                     MessageBox.Show("Thêm thành công");
@@ -269,7 +269,7 @@ namespace PRL.Views
 
             if (confirmResult == DialogResult.Yes)
             {
-                
+
                 bool resurl = _dichVuService.Delete(selectIDDV);
                 if (resurl)
                 {
