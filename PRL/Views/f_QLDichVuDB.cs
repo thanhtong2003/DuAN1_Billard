@@ -201,13 +201,13 @@ namespace PRL.Views
 
             if (confirmResult == DialogResult.Yes)
             {
-                
+
                 var obj = new DichVuDb();
                 obj.TenDichVuDb = txtTenDVDB.Text;
-                obj.IddichVuDb = idLoai;
+                obj.IddichVuDb = 1;
                 obj.MoTa = txtGhiChu.Text;
                 obj.DonGia = Convert.ToDecimal(txtDonGia.Text);
-                bool resurl =_dichVuService.Create(obj);
+                bool resurl = _dichVuService.Create(obj);
                 if (resurl)
                 {
                     MessageBox.Show("Thêm thành công");
